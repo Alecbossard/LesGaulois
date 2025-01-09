@@ -13,7 +13,11 @@ public class Gaulois {
 		return name ;
 	}
 	public void parler(String text) {
-		System.out.println(" Gaulois " + name + " : " + text );
+		System.out.println("Le gaulois " + name + " : " + text );
+	}
+	public void frapper(Romain neuille) {
+		System.out.println(name + " envoie un grand coup dans la machoire de " + neuille.name);
+		neuille.recevoirCoup(force/3);
 	}
 	public static void main(String[] args) {
 		Gaulois asterix = new Gaulois("Astrerix", 8);
