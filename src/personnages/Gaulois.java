@@ -1,8 +1,8 @@
 package personnages;
 
 public class Gaulois {
-	public String name;
-	public int force;
+	private String name;
+	private int force;
 	
 	public Gaulois(String name, int force) {
 		this.name = name;
@@ -12,15 +12,18 @@ public class Gaulois {
 	public String getName() {
 		return name ;
 	}
+	public int getForce() {
+		return force ;
+	}
 	public void parler(String text) {
-		System.out.println("Le gaulois " + name + " : " + text );
+		System.out.println("Le gaulois " + this.getName() + " : " + text );
 	}
 	public void frapper(Romain neuille) {
-		System.out.println(name + " envoie un grand coup dans la machoire de " + neuille.name);
+		System.out.println(this.getName() + " envoie un grand coup dans la machoire de " + neuille.getName());
 		neuille.recevoirCoup(force/3);
 	}
 	public static void main(String[] args) {
 		Gaulois asterix = new Gaulois("Astrerix", 8);
-		System.out.println("Le nom est : " + asterix.name + " et sa force est de : " + asterix.force );
+		System.out.println("Le nom est : " + asterix.getName() + " et sa force est de : " + asterix.getForce() );
 	}
 }

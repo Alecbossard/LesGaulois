@@ -1,8 +1,8 @@
 package personnages;
 
 public class Romain {
-	public String name;
-	public int force;
+	private String name;
+	private int force;
 	
 	public Romain(String name, int force) {
 		this.name = name;
@@ -12,8 +12,11 @@ public class Romain {
 	public String getName() {
 		return name ;
 	}
+	public int getForce() {
+		return force ;
+	}
 	public void parler(String text) {
-		System.out.println("Le romain " + name + " : " + text );
+		System.out.println("Le romain " + this.getName() + " : " + text );
 	}
 	public void recevoirCoup(int coup) {
 		this.force = this.force - coup ;
