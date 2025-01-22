@@ -1,5 +1,6 @@
 package sites;
 
+import personnages.Grade;
 import personnages.Personnage;
 import personnages.Soldat;
 
@@ -27,9 +28,18 @@ public class Camp{
 		}
 	}
 	public void afficherCamp() {
-		System.out.println("Le village de " +this.commandant.getName() +" est habité par : ");
+		System.out.println("Le camp dirigé par " +this.commandant.getName() +" contient les soldats : ");
 		for ( int i=0; i<nbMembres;i++) {
 			System.out.println("- "+ membres[i].getName());
+		}
+	}
+	public void changerCommandant(Soldat ez) {
+		if ( ez.getGrade() == Grade.CENTURION ) {	
+			this.commandant = ez ;
+			commandant.parler(" Moi " + ez.getName() + " je prends la direction du camp romain.");
+		}
+		else {
+			ez.parler(" Je ne suis pas suffisamment gradé pour prendre la direction du camp romain.");
 		}
 	}
 }

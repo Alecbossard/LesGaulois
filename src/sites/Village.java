@@ -33,4 +33,9 @@ public class Village{
 			System.out.println("- "+ membres[i].getName());
 		}
 	}
+	public void changerChef(Gaulois ez) {
+			chef.parler(" Je laisse mon grand bouclier au grand " + ez.getName() );	
+			this.chef = ez ;
+			chef.parler(" Merci ! ");
+	}
 }
