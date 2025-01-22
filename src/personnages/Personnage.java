@@ -3,15 +3,24 @@ package personnages;
 public abstract class Personnage {
 	protected String name;
 	protected int force;
-	
-	
-		
+	protected boolean enVie;
+
+    public Personnage(String name, int force) {
+        this.name = name;
+        this.force = force;
+        this.enVie = true; 
+    }
+    
 	public String getName() {
 		return name ;
 	}
 	public int getForce() {
 		return force ;
-	}	
+	}
+	public boolean estAterre() {
+        return this.enVie;  
+    }
+	
 	public void parler(String text) {
 		System.out.println(this.donnerAuteur()+ " " + this.getName() + " : " + text );
 	}
@@ -23,8 +32,9 @@ public abstract class Personnage {
 		else if (this.force >0) {
 			this.parler("Aie !");
 		}
-		if(this.force==0) {
+		else {
 			this.parler("J'abandonne...");
+			this.enVie = false;
 		}
 	}
 	public void frapper(Personnage neuille) {

@@ -3,8 +3,7 @@ package personnages;
 public class Romain extends Personnage {
 
 	public Romain(String name, int force) {
-		this.name = name;
-		this.force = force;
+		super(name,force);
 	}
 	@override
 	public String donnerAuteur() {
