@@ -8,42 +8,35 @@ public class TestGaulois {
 	public static void main(String[] args) {
 		Gaulois asterix = new Gaulois("Asterix", 5);
         Gaulois obelix = new Gaulois("Obelix", 7);
-        Gaulois assurancetourix  = new Gaulois("Assurancetourix ", 2);
-        Gaulois abraracourcix  = new Gaulois("Abraracourcix", 5);
-        Gaulois agecanonix  = new Gaulois("Agecanonix ", 1);
-        
+        Gaulois assurancetourix = new Gaulois("Assurancetourix", 2);
+        Gaulois abraracourcix = new Gaulois("Abraracourcix", 5);
+        Gaulois agecanonix = new Gaulois("Agecanonix", 1);
+
         Druide panoramix = new Druide("Panoramix", 5);
         
-        Romain minus = new Romain("Minus", 40);
+        Romain minus = new Romain("Minus", 6);
 
-     
-        
-        
+        minus.equiper("bouclier");
+        minus.equiper("casque");
+        minus.equiper("plastron");
+
         panoramix.creerPotion();
         panoramix.boosterGaulois(asterix);
         panoramix.boosterGaulois(obelix);
         panoramix.boosterGaulois(assurancetourix);
         panoramix.boosterGaulois(abraracourcix);
         panoramix.boosterGaulois(agecanonix);
-        
 
-        System.out.println(asterix.getName() + " a maintenant une force de " + asterix.getForce());
-        System.out.println(obelix.getName() + " a maintenant une force de " + obelix.getForce());
-        
-        
         asterix.parler("Bonjour à tous");
         minus.parler("UN GAU... UN GAUGAU...");
-        
+
         while (asterix.estAterre() && minus.estAterre()) {
             asterix.frapper(minus);
-            System.out.println(asterix.getName() + " a maintenant une force de " + asterix.getForce());
             if (!minus.estAterre()) break;
-            
+
             minus.frapper(asterix);
         }
 
-        if (!minus.estAterre()) {
-        }
+
     }
-	
 	}

@@ -10,7 +10,7 @@ public class Soldat extends Romain{
 	
 	@Override
 	public String donnerAuteur() {
-		return "Le Romain";
+		return  grade.toString() + this.name ;
 	}
 	public Grade getGrade() {
 		return this.grade ;

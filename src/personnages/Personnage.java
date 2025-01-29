@@ -37,7 +37,7 @@ public abstract class Personnage {
 	}
 	public void frapper(Personnage neuille) {
 		this.parler(this.getName() + " envoie un grand coup dans la machoire de " + neuille.getName());
-		neuille.recevoirCoup(force/3);
+		neuille.recevoirCoup(force);
 	}
 	public abstract String donnerAuteur();
 }

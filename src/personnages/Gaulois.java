@@ -22,12 +22,13 @@ public class Gaulois extends Personnage {
         this.boost = false;
         this.force = forceInitiale;
     }
+	
 	public void frapper(Personnage neuille) {
-		this.parler(this.getName() + " envoie un grand coup dans la machoire de " + neuille.getName());
-		neuille.recevoirCoup(force/3);
+		System.out.println("Le gaulois "+ this.getName() + "  donne un grand coup de force "+  this.getForce() + " au soldat " + neuille.getName() );
+		neuille.recevoirCoup(force);
 		if (this.boost) {
 			if (this.force>1)
-			this.force = this.force -1;
+			this.force =  this.force - 1;
 		}else {
 			this.boost=false;
 			this.force=1;
