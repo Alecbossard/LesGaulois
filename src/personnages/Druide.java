@@ -29,7 +29,7 @@ public class Druide extends Gaulois{
 	}
 	 public void boosterGaulois(Gaulois king) {
 		 if (king.getName().equals("Obelix")) {
-	            System.out.println("Obélix ne peut pas boire de potion magique.");
+	            this.parler(" Non, Obélix Non !... Et tu le sais très bien !");
 		 }
 		 else {
 			 if (nbP ==0) {

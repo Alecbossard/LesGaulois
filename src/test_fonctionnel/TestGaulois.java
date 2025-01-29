@@ -14,10 +14,10 @@ public class TestGaulois {
         
         Druide panoramix = new Druide("Panoramix", 5);
         
-        Romain minus = new Romain("Minus", 6);
+        Romain minus = new Romain("Minus", 40);
 
      
-
+        
         
         panoramix.creerPotion();
         panoramix.boosterGaulois(asterix);
@@ -26,12 +26,24 @@ public class TestGaulois {
         panoramix.boosterGaulois(abraracourcix);
         panoramix.boosterGaulois(agecanonix);
         
-        
-        
+
         System.out.println(asterix.getName() + " a maintenant une force de " + asterix.getForce());
         System.out.println(obelix.getName() + " a maintenant une force de " + obelix.getForce());
+        
+        
+        asterix.parler("Bonjour à tous");
+        minus.parler("UN GAU... UN GAUGAU...");
+        
+        while (asterix.estAterre() && minus.estAterre()) {
+            asterix.frapper(minus);
+            System.out.println(asterix.getName() + " a maintenant une force de " + asterix.getForce());
+            if (!minus.estAterre()) break;
+            
+            minus.frapper(asterix);
+        }
 
-       
+        if (!minus.estAterre()) {
+        }
     }
 	
 	}

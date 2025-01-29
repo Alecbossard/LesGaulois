@@ -26,15 +26,13 @@ public abstract class Personnage {
 	}
 	public void recevoirCoup(int coup) {
 		this.force = this.force - coup ;
-		if (this.force<0) {
+		if (this.force<=0) {
 			this.force = 0 ;
+			this.parler("J'abandonne...");
+			this.enVie = false;
 		}
 		else if (this.force >0) {
 			this.parler("Aie !");
-		}
-		else {
-			this.parler("J'abandonne...");
-			this.enVie = false;
 		}
 	}
 	public void frapper(Personnage neuille) {
